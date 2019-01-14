@@ -9,19 +9,24 @@ class App extends Component {
     super();
     this.state = {
       dummyData: dummyData,
-      comments: dummyData.map((user) => {
-        return user.comments
+      postList: dummyData.map(post => {
+        return post
       })
     }
-    console.log(this.state.comments);
-    console.log(this.state.comments.map(listOfComments => {return listOfComments.username}))
-  }
+    console.log(this.state.postList);
+    console.log(this.state.postList.map(post => {
+      return post}))
+    }
 
   render() {
     return (
       <div className="App">
         <SearchBar/>
-        <PostContainer listOfCommentsLists={this.state.comments}/>
+        {this.state.postList.map(post => {
+          return (
+            <PostContainer post={post}/>
+          )
+        })}
       </div>
     );
   }

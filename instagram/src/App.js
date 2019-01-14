@@ -13,10 +13,7 @@ class App extends Component {
         return post
       })
     }
-    console.log(this.state.postList);
-    console.log(this.state.postList.map(post => {
-      return post}))
-    }
+  }
 
   render() {
     return (

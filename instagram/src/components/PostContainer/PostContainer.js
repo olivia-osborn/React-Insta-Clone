@@ -5,10 +5,12 @@ import "./PostContainer.css";
 function PostContainer(props) {
     return (
         <div className="post-container">
-            <img src={props.post.thumbnailUrl} alt="user-thumbnail"/>
-            <p>{props.post.username}</p>
-            <img src={props.post.imageUrl} alt="insta-pic"/>
-            <p>{props.post.likes}</p>
+            <div className="poster">
+                <img className="thumbnail" src={props.post.thumbnailUrl} alt="user-thumbnail"/>
+                <a href="" className="username">{props.post.username}</a>
+            </div>
+            <img className="content" src={props.post.imageUrl} alt="insta-pic"/>
+            <p>{props.post.likes} likes</p>
             <CommentSection listOfComments={props.post.comments} />
         </div>
     )

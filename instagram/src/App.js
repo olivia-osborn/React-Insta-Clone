@@ -13,13 +13,15 @@ class App extends Component {
         return user.comments
       })
     }
+    console.log(this.state.comments);
+    console.log(this.state.comments.map(listOfComments => {return listOfComments.username}))
   }
 
   render() {
     return (
       <div className="App">
         <SearchBar/>
-        <PostContainer/>
+        <PostContainer listOfCommentsLists={this.state.comments}/>
       </div>
     );
   }

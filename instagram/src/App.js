@@ -8,11 +8,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: dummyData
+      dummyData: dummyData,
+      comments: dummyData.map((user) => {
+        return user.comments
+      })
     }
-
-
   }
+
   render() {
     return (
       <div className="App">

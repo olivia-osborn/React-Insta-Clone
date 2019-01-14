@@ -2,11 +2,15 @@ import React from "react";
 import CommentSection from "../CommentSection/CommentSection";
 
 function PostContainer(props) {
-    return(
-        <div>
-            <p>post container</p>
-            <CommentSection/>
-        </div>
+    // return(
+    //     <div>
+    //         {props.userData.map(dataPiece => {
+    //             return <CommentSection dataPiece={dataPiece}/>
+    //         })}
+    //     </div>
+    // )
+    return (
+        <CommentSection/>
     )
 }
 

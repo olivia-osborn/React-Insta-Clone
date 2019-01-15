@@ -16,12 +16,13 @@ class CommentSection extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
     addNewComment= e => {
-        e.preventDefault()
+        e.preventDefault();
         this.setState({
             comments: [
                 ...this.state.comments, 
-                {newComment: this.state.newComment}
-            ]
+                {text: this.state.newComment, username: "oliviaosborn"}
+            ],
+            newComment: ""
         })
     }
 

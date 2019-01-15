@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function CommentForm(props) {
     return (
@@ -13,6 +14,12 @@ function CommentForm(props) {
             />
         </form>
     )
+}
+
+Comment.propTypes = {
+    addNewComment: PropTypes.func,
+    handleChanges: PropTypes.func,
+    newComment: PropTypes.string
 }
 
 export default CommentForm;

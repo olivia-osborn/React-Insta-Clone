@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CommentSection from "../CommentSection/CommentSection";
 import "./PostContainer.css";
+import PropTypes from "prop-types";
 
 class PostContainer extends Component {
     constructor(props) {
@@ -33,5 +34,8 @@ class PostContainer extends Component {
     }
 }
 
+CommentSection.propTypes = {
+    post: PropTypes.object
+}
 
 export default PostContainer;

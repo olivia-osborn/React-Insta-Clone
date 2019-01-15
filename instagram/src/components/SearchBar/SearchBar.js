@@ -10,9 +10,9 @@ function SearchBar(props) {
             </div>
             <input className="search" type="text" placeholder="Search"/>
             <div>
-                <a className="icon" href="null"><img src={require("./navigation.png")} alt="nav-icon"/></a>
-                <a className="icon" href="null"><img src={require("./heart.png")} alt="heart-icon"/></a>
-                <a className="icon" href="null"><img src={require("./user.png")} alt="user-icon"/></a>
+                <i class="far fa-compass"></i>
+                <i class="far fa-heart"></i>
+                <i class="far fa-user"></i>
             </div>
         </div>
     )

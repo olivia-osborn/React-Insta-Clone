@@ -10,6 +10,8 @@ function PostContainer(props) {
                 <a href="placeholder" className="username">{props.post.username}</a>
             </div>
             <img className="content" src={props.post.imageUrl} alt="insta-pic"/>
+            <i onclick = {props.addLike} class="far fa-heart"></i>
+            <i class="far fa-comment"></i>
             <p className="likes">{props.post.likes} likes</p>
             <CommentSection listOfComments={props.post.comments} />
         </div>

@@ -8,20 +8,21 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      dummyData: dummyData,
-      postList: dummyData.map(post => {
-        return post
-      })
+      dummyData: []
     }
+  }
+
+  componentDidMount() {
+    this.setState({dummyData: dummyData})
   }
 
   render() {
     return (
       <div className="App">
         <SearchBar/>
-        {this.state.postList.map(post => {
+        {this.state.dummyData.map((post, index) => {
           return (
-            <PostContainer post={post}/>
+            <PostContainer post={post} key={index}/>
           )
         })}
       </div>

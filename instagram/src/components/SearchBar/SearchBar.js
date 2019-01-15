@@ -8,7 +8,7 @@ function SearchBar(props) {
                 <img className="logo" src={require("./instagram-logo.png")} alt="insta-logo"/>
                 <img className="title" src={require("./instagram-logo-text-black-png.png")} alt="insta-title" />
             </div>
-            <input className="search" type="text" placeHolder="Search"/>
+            <input className="search" type="text" placeholder="Search"/>
             <div>
                 <a className="icon" href="null"><img src={require("./navigation.png")} alt="nav-icon"/></a>
                 <a className="icon" href="null"><img src={require("./heart.png")} alt="heart-icon"/></a>

@@ -6,8 +6,8 @@ function CommentSection(props) {
     return(
         <div>
             <div className="comments">
-                {props.listOfComments.map(comment => {
-                    return <Comment comment={comment}/>;
+                {props.listOfComments.map((comment, index) => {
+                    return <Comment comment={comment} key={index}/>;
                 })}
             </div>
             <input className="add-comment" type="text" placeholder="Add a comment..."/>

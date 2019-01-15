@@ -1,6 +1,7 @@
 .post-container {
     width: 600px;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 .thumbnail {
@@ -24,5 +25,10 @@
 .content {
     height: 600px;
     width: 600px;
+}
+
+.likes {
+    font-weight: bold;
+    margin: 10px;
 }
 

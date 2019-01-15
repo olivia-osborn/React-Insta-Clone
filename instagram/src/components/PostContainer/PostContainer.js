@@ -7,10 +7,10 @@ function PostContainer(props) {
         <div className="post-container">
             <div className="poster">
                 <img className="thumbnail" src={props.post.thumbnailUrl} alt="user-thumbnail"/>
-                <a href="" className="username">{props.post.username}</a>
+                <a href="placeholder" className="username">{props.post.username}</a>
             </div>
             <img className="content" src={props.post.imageUrl} alt="insta-pic"/>
-            <p>{props.post.likes} likes</p>
+            <p className="likes">{props.post.likes} likes</p>
             <CommentSection listOfComments={props.post.comments} />
         </div>
     )

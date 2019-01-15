@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Comment.css";
 
 function Comment(props) {
     return (
-        <div>
-            <p className="username">{props.comment.username}</p>
-            <p>{props.comment.text}</p>
+        <div className="comment">
+            <a className="username" href="null">{props.comment.username}</a>
+            <p className="comment-text">{props.comment.text}</p>
         </div>
     )
 }

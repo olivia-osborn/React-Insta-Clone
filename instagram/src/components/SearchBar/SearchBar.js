@@ -10,9 +10,9 @@ function SearchBar(props) {
             </div>
             <input className="search" type="text" placeholder="Search"/>
             <div>
-                <i class="far fa-compass"></i>
-                <i class="far fa-heart"></i>
-                <i class="far fa-user"></i>
+                <i className="far fa-compass"></i>
+                <i className="far fa-heart"></i>
+                <i className="far fa-user"></i>
             </div>
         </div>
     )

@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       dummyData: []
     }
+    console.log(dummyData)
   }
 
   componentDidMount() {
@@ -22,7 +23,10 @@ class App extends Component {
         <SearchBar/>
         {this.state.dummyData.map((post, index) => {
           return (
-            <PostContainer post={post} key={index}/>
+            <PostContainer 
+            post={post} 
+            key={index}
+            />
           )
         })}
       </div>

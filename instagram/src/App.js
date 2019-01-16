@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import dummyData from "./dummy-data";
-import PostContainer from "./components/PostContainer/PostContainer";
-import SearchBar from "./components/SearchBar/SearchBar";
+import PostsPage from "./components/PostContainer/PostsPage";
 
 class App extends Component {
   constructor() {
@@ -34,17 +33,15 @@ class App extends Component {
   }
 
   render() {
-    console.log("rendering")
-    console.log("when I'm rendering, dummyData = " , this.state.filteredPosts)
     return (
       <div className="App">
-        <SearchBar 
-        dummyData={this.state.dummyData}
-        handleChanges={this.handleChanges}
-        search={this.search}
-        searchInput={this.state.searchInput}
+        <PostsPage 
+        dummyData = {this.state.dummyData}
+        handleChanges = {this.handleChanges}
+        search = {this.search}
+        searchInput= {this.state.searchInput}
+        filteredPosts={this.state.filteredPosts}
         />
-        {this.state.filteredPosts.length > 0 ? (this.state.filteredPosts.map((post, index) => <PostContainer post={post} key={index}/>)) : (this.state.dummyData.map((post, index) => <PostContainer post={post} key={index}/>))} 
       </div>
     );
   }

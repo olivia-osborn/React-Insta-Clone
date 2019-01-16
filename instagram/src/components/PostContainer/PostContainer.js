@@ -18,6 +18,7 @@ class PostContainer extends Component {
       }
 
     render() {
+        console.log("when postcontainer is rendering, post = " , this.state.post)
         return (
             <div className="post-container">
                 <div className="poster">

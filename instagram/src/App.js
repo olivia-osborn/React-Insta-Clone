@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       dummyData: [],
-      searchInput: ""
+      searchInput: "",
+      filteredPosts: []
     }
   }
 
@@ -24,22 +25,17 @@ class App extends Component {
 
   search = e => {
     e.preventDefault();
-    console.log("searching")
-    let searchMatches = []
-    dummyData.forEach(post => {
-      if (post.username === this.state.searchInput) {
-        searchMatches.push(post)
-      }
-    })
-    console.log(searchMatches);
+    let searchMatches = dummyData.filter(post => 
+      post.username === this.state.searchInput
+    )
     if (searchMatches.length > 0) {
-      this.setState({dummyData: searchMatches})
+      this.setState({filteredPosts: searchMatches})
     }
   }
 
   render() {
     console.log("rendering")
-    console.log("when I'm rendering, dummyData = " , this.state.dummyData)
+    console.log("when I'm rendering, dummyData = " , this.state.filteredPosts)
     return (
       <div className="App">
         <SearchBar 
@@ -48,17 +44,11 @@ class App extends Component {
         search={this.search}
         searchInput={this.state.searchInput}
         />
-        {this.state.dummyData.map((post, index) => {
-          return (
-            <PostContainer 
-            post={post} 
-            key={index}
-            />
-          )
-        })}
+        {this.state.filteredPosts.length > 0 ? (this.state.filteredPosts.map((post, index) => <PostContainer post={post} key={index}/>)) : (this.state.dummyData.map((post, index) => <PostContainer post={post} key={index}/>))} 
       </div>
     );
   }
 }
 
 export default App;
+

@@ -11,7 +11,6 @@ class App extends Component {
       dummyData: [],
       searchInput: ""
     }
-    console.log(dummyData)
   }
 
   componentDidMount() {
@@ -19,16 +18,17 @@ class App extends Component {
   }
 
   handleChanges = e => {
+    console.log("handling change")
     this.setState({[e.target.name]: e.target.value});
 }
 
   search = e => {
     e.preventDefault();
+    console.log("searching")
     let searchMatches = []
     dummyData.forEach(post => {
       if (post.username === this.state.searchInput) {
         searchMatches.push(post)
-      } else {
       }
     })
     console.log(searchMatches);
@@ -38,6 +38,8 @@ class App extends Component {
   }
 
   render() {
+    console.log("rendering")
+    console.log("when I'm rendering, dummyData = " , this.state.dummyData)
     return (
       <div className="App">
         <SearchBar 

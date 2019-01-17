@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import CommentSection from "../CommentSection/CommentSection";
 import styled from "styled-components";
-import Icon from "../../ReusableStyles";
+import Icon from "../../ReusableStyles/Icon";
+import Username from "../../ReusableStyles/Username"
 
 const StyledPost = styled.div`
     margin-bottom: 50px;
@@ -20,17 +21,15 @@ const Thumbnail = styled.img`
     margin: 10px;
 `
 
-const Username = styled.a`
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-`
-
 const Content = styled.img`
     height: 600px;
     width: 599px;
 `
 
+const Likes = styled.p`
+    font-weight: bold;
+    margin: 10px;
+`
 
 class Post extends Component {
     constructor(props) {
@@ -56,7 +55,7 @@ class Post extends Component {
                 <Content className="content" src={this.state.post.imageUrl} alt="insta-pic"/>
                 <Icon onClick = {this.addLike} className="far fa-heart"></Icon>
                 <Icon className="far fa-comment"></Icon>
-                <p className="likes">{this.state.likes} likes</p>
+                <Likes className="likes">{this.state.likes} likes</Likes>
                 <CommentSection listOfComments={this.state.post.comments} user={this.props.user}/>
             </StyledPost>
         )

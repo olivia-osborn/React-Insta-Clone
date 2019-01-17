@@ -1,5 +1,4 @@
 import React from 'react';
-import "./PostContainer.css";
 import styled from "styled-components";
 // import PropTypes from "prop-types";
 import Post from "./Post";

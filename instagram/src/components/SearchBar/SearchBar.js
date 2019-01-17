@@ -1,7 +1,7 @@
 import React from 'react';
 // import "./SearchBar.css";
 import styled from "styled-components";
-import Icon from "../../ReusableStyles";
+import Icon from "../../ReusableStyles/Icon";
 
 const Header = styled.header`
     position: fixed;

@@ -13,8 +13,7 @@ function SearchBar(props) {
                     className="search" 
                     type="text" 
                     placeholder="Search"
-                    value={props.searchInput}
-                    onChange={props.search}
+                    onKeyDown={props.search}
                     name="searchInput"
                 />
             </form>

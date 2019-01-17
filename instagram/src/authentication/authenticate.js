@@ -6,7 +6,6 @@ const authenticate = App => LoginPage => {
                 super(props);
                 this.state = {
                     loggedIn: false,
-                    // user: ""
                 };
             }
 
@@ -14,7 +13,6 @@ const authenticate = App => LoginPage => {
                 if (localStorage.getItem("user")) {
                     this.setState({
                         loggedIn: true,
-                        // user: localStorage.getItem("user")
                     })
                 }
             }

@@ -1,6 +1,7 @@
 import React from 'react';
 // import "./SearchBar.css";
 import styled from "styled-components";
+import Icon from "../../ReusableStyles";
 
 const Header = styled.header`
     position: fixed;
@@ -10,6 +11,7 @@ const Header = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+    border-bottom: 1px solid black;
 `
 
 const LogoImage = styled.img`
@@ -31,21 +33,15 @@ const HeaderImages = styled.div`
 const SearchInput = styled.input`
     text-align: center;
     height: 20px;
-    width: 180px;
+    width: 200px;
     background: rgb(247, 247, 247);
-    border: 1px solid rgb(211, 211, 211);
-`
-
-const Icon = styled.i`
-    margin-left: 30px;
-    font-size: 20px;
+    border: 1px solid lightgray;
+    margin-left: 100px;
 `
 
 const Icons = styled.div`
     margin-right: 50px;
 `
-
-
 
 function SearchBar(props) {
     return(

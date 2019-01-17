@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dummyData: [],
+      posts: [],
       searchInput: "",
       filteredPosts: [],
       // isSearching: false,
@@ -17,12 +17,48 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({dummyData: dummyData})
+    this.setState({posts: dummyData})
   }
 
   handleChanges = e => {
     this.setState({[e.target.name]: e.target.value});
 }
+  search = e => {
+    // eslint-disable-next-line
+    const posts = this.state.posts.filter(post => {
+      if (post.username.includes(e.target.value)) {
+        return post;
+      }
+    });
+    this.setState({filteredPosts: posts});
+  };
+
+  render() {
+    console.log("when rendering, filtered posts:", this.state.filteredPosts)
+    return (
+      <div className="App">
+        <PostsPage 
+        posts = {this.state.posts}
+        handleChanges = {this.handleChanges}
+        search = {this.search}
+        searchInput= {this.state.searchInput}
+        filteredPosts={this.state.filteredPosts}
+        user={this.props.user}
+        // isSearching = {this.state.isSearching}
+        />
+      </div>
+    );
+  }
+}
+
+export default authenticate(App)(Login);
+
+
+
+
+
+
+
 
   // search = e => {
   //   // e.preventDefault();
@@ -44,34 +80,3 @@ class App extends Component {
   //   }
   //   return obj
   // }
-
-  search = e => {
-    e.preventDefault();
-    let searchMatches = dummyData.filter(post => 
-      post.username === this.state.searchInput
-    )
-    if (searchMatches.length > 0) {
-      this.setState({filteredPosts: searchMatches})
-    }
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <PostsPage 
-        dummyData = {this.state.dummyData}
-        handleChanges = {this.handleChanges}
-        search = {this.search}
-        searchInput= {this.state.searchInput}
-        filteredPosts={this.state.filteredPosts}
-        username={this.props.username}
-        // isSearching = {this.state.isSearching}
-        />
-        <Login />
-      </div>
-    );
-  }
-}
-
-export default authenticate(App)(Login);
-

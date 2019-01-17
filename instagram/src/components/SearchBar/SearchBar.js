@@ -8,13 +8,13 @@ function SearchBar(props) {
                 <img className="logo" src={require("./instagram-logo.png")} alt="insta-logo"/>
                 <img className="title" src={require("./instagram-logo-text-black-png.png")} alt="insta-title" />
             </div>
-            <form onSubmit={props.search}>
+            <form>
                 <input
                     className="search" 
                     type="text" 
                     placeholder="Search"
                     value={props.searchInput}
-                    onChange={props.handleChanges}
+                    onChange={props.search}
                     name="searchInput"
                 />
             </form>

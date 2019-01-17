@@ -3,22 +3,27 @@ import React from "react";
 const authenticate = App => LoginPage => {
     return class extends React.Component {
             constructor(props) {
-                super(props)
+                super(props);
                 this.state = {
                     loggedIn: false,
-                    username: ""
-                }
+                    // user: ""
+                };
             }
+
             componentDidMount() {
-                if (localStorage.getItem("username")) {
+                if (localStorage.getItem("user")) {
                     this.setState({
                         loggedIn: true,
-                        username: localStorage.getItem("username")
+                        // user: localStorage.getItem("user")
                     })
-                    }
+                }
             }
             render() {
-                return <App />
+                if (this.state.loggedIn) {
+                    return <App />
+                } else {
+                    return <LoginPage />
+                }
             }
         }
 }

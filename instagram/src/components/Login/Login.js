@@ -10,13 +10,13 @@ class Login extends Component {
     }
 
     login = e => {
-        e.preventDefault();
-        const username = this.state.username
-        localStorage.setItem("username", username)
-        // window.location.reload()
+        const user = this.state.username;
+        localStorage.setItem("user", user);
+        console.log(localStorage)
+        window.location.reload();
     }
     
-    handleChanges = e => {
+    handleLoginChanges = e => {
         this.setState({[e.target.name]: e.target.value});
     }
 
@@ -28,14 +28,14 @@ class Login extends Component {
                 placeholder="username"
                 value={this.state.username}
                 name="username"
-                onChange={this.handleChanges}
+                onChange={this.handleLoginChanges}
                 />
                 <input
-                type="text"
+                type="password"
                 placeholder="password"
                 name="password"
                 value={this.state.password}
-                onChange={this.handleChanges}
+                onChange={this.handleLoginChanges}
                 />
                 <button onClick={this.login}>Submit</button>
             </form>

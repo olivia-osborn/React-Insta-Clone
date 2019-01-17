@@ -21,7 +21,7 @@ class CommentSection extends Component {
         this.setState({
             comments: [
                 ...this.state.comments, 
-                {text: this.state.newComment, username: this.props.username}
+                {text: this.state.newComment, user: this.props.user}
             ],
             newComment: ""
         })

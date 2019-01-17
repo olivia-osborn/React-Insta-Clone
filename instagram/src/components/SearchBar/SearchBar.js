@@ -51,7 +51,6 @@ function SearchBar(props) {
                 <TitleImage src={require("./instagram-logo-text-black-png.png")} alt="insta-title" />
             </HeaderImages>
             <SearchInput 
-                className="search" 
                 type="text" 
                 placeholder="Search"
                 onKeyDown={props.search}

@@ -29,6 +29,7 @@ const Content = styled.img`
 const Likes = styled.p`
     font-weight: bold;
     margin: 10px;
+    margin-bottom: 20px;
 `
 
 class Post extends Component {

@@ -18,7 +18,6 @@ class PostContainer extends Component {
       }
 
     render() {
-        console.log("when postcontainer is rendering, post = " , this.state.post)
         return (
             <div className="post-container">
                 <div className="poster">
@@ -29,7 +28,7 @@ class PostContainer extends Component {
                 <i onClick = {this.addLike} className="far fa-heart"></i>
                 <i className="far fa-comment"></i>
                 <p className="likes">{this.state.likes} likes</p>
-                <CommentSection listOfComments={this.state.post.comments} />
+                <CommentSection listOfComments={this.state.post.comments} username={this.props.username}/>
             </div>
         )
     }

@@ -47,8 +47,12 @@ function SearchBar(props) {
     return(
         <Header>
             <HeaderImages>
-                <LogoImage src={require("./instagram-logo.png")} alt="insta-logo"/>
-                <TitleImage src={require("./instagram-logo-text-black-png.png")} alt="insta-title" />
+                <a href={"/react"}>
+                    <LogoImage src={require("./instagram-logo.png")} alt="insta-logo"/>
+                </a>
+                <a href={"/react"}>
+                    <TitleImage src={require("./instagram-logo-text-black-png.png")} alt="insta-title" />
+                </a>
             </HeaderImages>
             <SearchInput 
                 type="text" 

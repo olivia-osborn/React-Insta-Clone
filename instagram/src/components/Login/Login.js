@@ -10,10 +10,12 @@ class Login extends Component {
     }
 
     login = e => {
+        e.preventDefault()
         const user = this.state.username;
         localStorage.setItem("user", user);
-        console.log(localStorage)
-        window.location.reload();
+        if (this.state.password) {
+            window.location.reload();
+        }
     }
     
     handleLoginChanges = e => {

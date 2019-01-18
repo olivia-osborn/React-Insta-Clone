@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const AddComment = styled.input`
-    width: 80%;
+    width: 95%;
     height: 30px;
     font-size: 16px;
     padding-left: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
     border: none;
 `
 

@@ -15,9 +15,17 @@ class CommentSection extends Component {
         super(props)
         this.state = {
             comments: props.listOfComments,
-            newComment: ""
+            newComment: "",
+            commentUsername: ""
         }
     }
+
+    componentDidMount() {
+        let storedUsername = localStorage.getItem("user")
+        if (storedUsername) {
+            this.setState({commentUsername: storedUsername})
+        }
+      }
 
     handleChanges = e => {
         this.setState({[e.target.name]: e.target.value});
@@ -27,7 +35,7 @@ class CommentSection extends Component {
         this.setState({
             comments: [
                 ...this.state.comments, 
-                {text: this.state.newComment, user: this.props.user}
+                {text: this.state.newComment, username: this.state.commentUsername}
             ],
             newComment: ""
         })
